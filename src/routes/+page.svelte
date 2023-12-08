@@ -1,5 +1,8 @@
 <script>
-    export let data;
+	import {Button, Card} from "flowbite-svelte";
+	import {ArrowRightOutline} from "flowbite-svelte-icons";
+
+	export let data;
     console.log(data);
     let email = data.props.data.email;
     let subject = data.props.data.subject;
@@ -10,9 +13,14 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section>
-    <p>Email = ${email}</p>
-    <p>Subject = ${subject}</p>
+<section class="flex justify-end">
+	<Card img="/main_image.png" class="mb-4">
+		<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+		<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+		<Button>
+			Read more <ArrowRightOutline class="w-3.5 h-3.5 ms-2 text-white" />
+		</Button>
+	</Card>
 </section>
 
 <style>
